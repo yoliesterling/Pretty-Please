@@ -18,7 +18,10 @@ User.findOne({'googleId': profile.id}, function(err, user) {
             email: profile.emails[0].value,
             googleId: profile.id
         });
-    }
+        newUser.save(function(err, user) {
+            return cb(null, user);
+            });
+        }
     });
 }
 ));

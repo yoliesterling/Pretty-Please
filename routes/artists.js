@@ -7,14 +7,10 @@ var router = express.Router();
 // });
 
 router.get('/', (req, res, next) => {
-  res.render('users/index', {
+  res.render('artists/index', {
     title: 'Pretty, Please',
     user: req.user
   });
 });
-
-// router.post('', () => {
-//   // call controller function 
-// })
 
 module.exports = router;

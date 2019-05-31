@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+    <h1>Schedule an Appointment</h1>
+<form action="/appointments" method="post">
+    
+    <label for="cust-name">Name:</label>
+    <input id="cust-name" type="text" name="name" value="Full Name">
+    
+    <label for="cust-phone">Phone:</label>
+    <input id="cust-phone" type="text" name="phoneNumber" value="Phone Number">
+
+    <label for="service">Service Request:</label>
+    <input id="service" type="text" name="service" value="Service Request">
+
+    <label for="time-date">Preferred Date & Time:</label>
+    <input id="time-date" type="datetime-local" name="time" value="Preferred Date & Time">
+
+    <input type="submit" value="Submit">
+
+</form>
+
+    
+<%- include('../partials/footer') %>

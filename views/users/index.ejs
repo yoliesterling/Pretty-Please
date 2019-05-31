@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Pretty, Please</title>
-    <link href="https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700" rel="stylesheet">
+<%- include('../partials/header') %>
+
+
+
+ 
     
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-
-  <body>
-        <div class="navbar-fixed">
-                <nav>
-                  <div class="nav-wrapper">
-                    <a href="" class="brand-logo left">Pretty, Please</a>
-      <ul class="right">
-          <li>
-          <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-          <% } else { %>
-            <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-          <% } %>
-          </li>
-        </ul>
-        </div>
-        </nav>
-        </div>
-  </body>
-</html>
-
-
-
-
+<%- include('../partials/footer') %>

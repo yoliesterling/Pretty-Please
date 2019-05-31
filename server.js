@@ -6,7 +6,10 @@ var logger = require('morgan');
 
 // Twilio API
 var appointments = require('./routes/appointments');
-var scheduler = require('./scheduler');
+// var scheduler = require('./scheduler');
+
+// Artists
+var artists = require('./routes/artists');
 
 // session middleware
 var session = require('express-session');
@@ -42,13 +45,14 @@ app.use(session({
 }));
 app.locals.moment = require('moment');
 
-app.use('/appointments', appointments);
-app.use('/', appointments);
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Artists
+app.use('/artists', artists);
+app.use('/appointments', appointments);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -68,6 +72,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-scheduler.start();
+// scheduler.start();
 
 module.exports = app;

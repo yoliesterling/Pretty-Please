@@ -1,30 +1,63 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #ff3627;
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
   font-weight: 300;
-  background-color: #864aff
+  background-color: #ff3627;
  }
  
  .brand-logo {
-  font-family: 'Archivo', sans-serif;
-  font-weight: 200;
+  font-family: 'Abril Fatface', serif;
+  font-style: bold;
   font-size: 40px;
-  color: #00fdcb;
+  color: #ffffff;
   text-decoration: overline;
  }
 
- li {
-  font-family: 'Archivo', sans-serif;
+
+ ul {
+  font-family: 'Roboto', sans-serif;
   font-weight: 200;
   font-size: 20px;
-  color: #00fdcb;
+  color: #ffffff;
   text-decoration: none;
+ }
+
+ .nav-links {
+display: flex;
+justify-content: space-around;
+width: 30%;
+text-decoration: none;
+ }
+
+ .nav-links a {
+   text-decoration: none;
+ }
+ 
+ .brand-logo a {
+   justify-content: left;
  }
  
  h2, h3 {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
  }
 
 a {
-  color: #00B7FF;
+  color: #ffffff;
+  text-decoration: none;
 }
+
