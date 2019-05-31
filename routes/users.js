@@ -13,8 +13,6 @@ router.get('/', (req, res, next) => {
   });
 });
 
-// router.post('', () => {
-//   // call controller function 
-// })
+
 
 module.exports = router;

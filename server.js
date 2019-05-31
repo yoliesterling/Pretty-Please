@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 // Twilio API
 var appointments = require('./routes/appointments');
-// var scheduler = require('./scheduler');
+
 
 // Artists
 var artists = require('./routes/artists');
@@ -29,6 +29,8 @@ require('./config/passport');
 // require routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var artistsRouter = require('./routes/artists');
+var reviewsRouter = require('./routes/reviews');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,6 +57,7 @@ app.use('/artists', artists);
 app.use('/appointments', appointments);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/reviews', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -75,3 +78,5 @@ app.use(function(err, req, res, next) {
 // scheduler.start();
 
 module.exports = app;
+
+// push to heroku

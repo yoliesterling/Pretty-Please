@@ -1,15 +1,14 @@
-var assert = require('assert');
-var mongoose = require('mongoose');
-var Artists = require('../models/artist');
+var Artist = require('../models/artist');
 
 module.exports = {
-    index
+  create
 };
 
-var ArtistSchema = new mongoose.Schema({
-
-});
-
-function index(req, res) {
-    res.render('artists/index', {artists});
+function create(req, res) {
+  Artist.findById(req.params.id, function(err, artist) {
+    artist.reviews.push(req.body);
+    artist.save(function(err) {
+      res.redirect(`/artist/${artist._id}`);
+    });
+  });
 }

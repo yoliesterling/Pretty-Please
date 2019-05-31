@@ -11,4 +11,18 @@ var artistSchema = new Schema({
     timestamps: true
 });
 
+var reviewSchema = new Schema({
+    content: String,
+  }, {
+    timestamps: true
+  });
+
 module.exports = mongoose.model('Artist', artistSchema);
+
+
+
+
+
+
+
+
