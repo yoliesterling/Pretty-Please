@@ -4,4 +4,8 @@ var reviewsCtrl = require('../controllers/artists');
 
 router.post('/artists/:id/reviews', reviewsCtrl.create);
 
+// app.get('/artists/show', function(req, res) {
+//     res.render('/artists/show');
+// });
+
 module.exports = router;

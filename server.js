@@ -53,11 +53,11 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Artists
-app.use('/artists', artists);
+app.use('/artists', artistsRouter);
 app.use('/appointments', appointments);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/reviews', reviewsRouter);
+app.use('/', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
