@@ -7,6 +7,7 @@
 <img src="https://i.imgur.com/R1UWUrq.png" title="source: imgur.com" /></a>
 </div>
 
+<div>
 <h2>Reviews</h2>
 <form id="add-review" method="post" action="/artists/reviews">
     <select name="artist">
@@ -17,5 +18,12 @@
     <label for="reviewLabel">Review:</label>
     <textarea name="content" id="reviewContent"></textarea>
     <input type="submit" value="Add Review">
-    </form>
+</form>
+</div>
+<br>
+<div> <%= user %> </div>
+
+
+    
+    
 <%- include('../partials/footer') %>

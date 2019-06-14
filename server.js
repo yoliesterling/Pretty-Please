@@ -4,9 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// Twilio API
+// Appointments
 var appointments = require('./routes/appointments');
-
 
 // Artists
 var artists = require('./routes/artists');

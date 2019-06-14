@@ -1,3 +1,4 @@
+
 const Artist = require('../models/artist');
 
 module.exports = {
@@ -29,3 +30,4 @@ function addReview(req, res) {
         res.redirect('/artists')
     });
 }
+
