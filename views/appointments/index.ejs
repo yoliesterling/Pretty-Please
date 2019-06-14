@@ -3,6 +3,29 @@
     <h1>Schedule an Appointment</h1>
 <br>
 
- 
+
+<form action="/appointments" method="post">
+
+<label for="cust-name">Name:</label>
+<input id="cust-name" type="text" name="name" value="Full Name">
+<br>
+<label for="cust-phone">Phone:</label>
+<input id="cust-phone" type="text" name="phoneNumber" value="Phone Number">
+<br>
+<label for="service">Service Request:</label>
+<input id="service" type="text" name="service" value="Service Request">
+<br>
+<label for="time-date">Preferred Date & Time:</label>
+<input id="time-date" type="datetime-local" name="time" value="Preferred Date & Time">
+<br>
+<input type="submit" value="Submit">
+
+<img src="https://i.imgur.com/Y92Xf7B.jpg" />
+
+</form>
+
+<div><%= appointments %></div>
+
+
     
 <%- include('../partials/footer') %>
