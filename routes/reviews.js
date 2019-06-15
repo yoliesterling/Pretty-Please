@@ -7,14 +7,14 @@ var reviewsCtrl = require('../controllers/artists');
 // router.get('/artists', isLoggedIn, reviewsCtrl.index);
 
 // POST reviews
-router.post('/artists/:id/reviews', isLoggedIn, reviewsCtrl.create);
+router.post('/artists/:id/reviews', reviewsCtrl.create);
 
 // DELETE reviews
 // router.delete('/reviews/:id', isLoggedIn, reviewsCtrl.delReview);
 
-function isLoggedIn(req, res, next) {
-    if ( req.isAuthenticated() ) return next();
-    res.redirect('/auth/google');
-}
+// function isLoggedIn(req, res, next) {
+//     if ( req.isAuthenticated() ) return next();
+//     res.redirect('/auth/google');
+// }
 
 module.exports = router;
