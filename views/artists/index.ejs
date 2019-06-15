@@ -2,11 +2,11 @@
 
 <h1>Artists</h1>
 <div id="artists">
-<img src="https://i.imgur.com/DRkQhAc.jpg" title="source: imgur.com" /></a>
-<img src="https://i.imgur.com/sdt3LxK.jpg" title="source: imgur.com" /></a>
-<img src="https://i.imgur.com/R1UWUrq.png" title="source: imgur.com" /></a>
+<img src="https://i.imgur.com/DRkQhAc.jpg" title="Anne H." /></a>
+<img src="https://i.imgur.com/sdt3LxK.jpg" title="John D." /></a>
+<img src="https://i.imgur.com/R1UWUrq.png" title="Emily B." /></a>
 </div>
-
+<br>
 <div>
 <h2>Reviews</h2>
 <form id="add-review" method="post" action="/artists/reviews">
@@ -15,15 +15,22 @@
            <option value="<%= a._id %>"><%= a.name %></option>
        <% }) %>
    </select>
-   <label for="reviewLabel">Review:</label>
+   <label for="reviewLabel">Select an Artist</label>
    <textarea name="content" id="reviewContent"></textarea>
    <input type="submit" value="Add Review">
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
 <br>
 <div>
    <% artists.forEach(a => { %>
-   <div>
+   <div id="artist-names">
        <h1> <%= a.name %> </h1>
        <ul>
            <li><%= a.reviews %></li>
@@ -31,10 +38,5 @@
    </div>
 <% }) %>
 </div>
-
-<div><%= artists %></div>
-
-
-
 
 <%- include('../partials/footer') %>

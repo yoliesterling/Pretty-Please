@@ -6,12 +6,7 @@ var userSchema = new Schema({
     email: String,
     number: String,
     googleId: String,
-    appointments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Appointment'
-        }
-    ]
+    
 }, {
     timestamps: true
 });

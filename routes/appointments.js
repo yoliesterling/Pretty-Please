@@ -2,37 +2,25 @@ const express = require('express');
 const Appointment = require('../models/appointment');
 const User = require('../models/user');
 const router = new express.Router();
+const apptCtrl = require('../controllers/appointments')
 
 
-// route that invokes controller function 
-router.post('/', function(req, res) {
-  Appointment.create(req.body, function(err, appointment) {
-    User.findByIdAndUpdate(req.user._id, {$push: {appointments: appointment._id }}, 
-      {new: true}, function(err, user) {
-      res.redirect('/');
-    })
-  });
-});
 
 
 // GET: /appointments
-router.get('/', function(req, res, next) {
-  Appointment.find()
-    .then(function(appointments) {
-      res.render('appointments/index', {
-        appointments: appointments, 
-        user: req.user,
-      });
-    });
-});
+router.get('/appointments/', apptCtrl.index);
+router.get('/appointments/:id', apptCtrl.show);
+router.get('/users/:id/appointments/new', apptCtrl.new)
+router.post('/users/:id/appointments/', apptCtrl.create)
+router.get("/appointments/:id/edit", apptCtrl.edit);
+router.put("/appointments/:id", apptCtrl.update);
+router.delete('/appointments/:id', isLoggedIn, apptCtrl.delete)
 
 
-// GET: /appointments/show
-router.get('/', function(req, res, next) {
-  res.render('appointments/show', {
-    user: req.user
-  });
-});
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()) return next();
+    res.redirect("/")
+}
 
 
 module.exports = router;
