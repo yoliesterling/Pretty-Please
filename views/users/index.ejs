@@ -1,10 +1,46 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pretty, Please</title>
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,700" rel="stylesheet">
+
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <nav>
+      <a href="" class="brand-logo">Pretty, Please</a>
+      <div class="nav-links">
+        <a href="/users">Home</a>
+        <a href="/artists">Artists</a>
+        <a href="/appointments">Appointments</a>
+          <% if (user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+            <% } else { %>
+            <a href="/auth/google"><i class="material-icons left">vpn_key</i> Sign Up | Login </a>
+            <% } %>
+      </div>
+  </nav>
+
 <ul id="home">
 <img src="https://i.imgur.com/l3Ytgdj.jpg" title="source: imgur.com" />
 <img src="https://i.imgur.com/rVAyCFa.jpg" title="source: imgur.com" />
 <img src="https://i.imgur.com/KVHCoHo.jpg" title="source: imgur.com" />
 <img src="https://i.imgur.com/t2pi7nK.jpg" title="source: imgur.com" />
 </ul>
- 
-    
-<%- include('../partials/footer') %>
+
+<div id="schedule-appt"> 
+<% if (user) {%>
+<a href="/users/<%= user._id %>/appointments/new">Schedule an Appointment Today!</a>
+<%}%>
+</div>
+<footer>Pretty, Please Inc. &copy 2019</footer>
+
+</body>
+</html>

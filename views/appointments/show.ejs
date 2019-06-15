@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-    <br><br>
+<!-- <br><br>
     <h1>Schedule an Appointment</h1>
     <br>
 <form action="/appointments" method="post">
@@ -21,8 +21,34 @@
 
     <img src="https://i.imgur.com/Y92Xf7B.jpg" />
 
+</form> -->
+
+<h2><%= appointment.name %></h2>
+<p><%= appointment.phoneNumber %></p>
+<p><%= appointment.service %></p>
+<p><%= appointment.time%></p>
+
+<a href="/appointments/<%= appointment._id%>/edit">Edit Appointment</a>
+<form action="/appointments/<%= appointment._id%>?_method=DELETE" method="POST">
+    <input type="submit" value="delete">
 </form>
 
 
-    
+<h3>comments</h3>
+<form action="/appointments/<%= appointment._id%>/comments" method="POST">
+    <label>
+        <input type="text" name="text">
+        <input type="submit" value="add comment">
+    </label>
+</form>
+
+<ul>
+    <% if (appointment.comments.length){ %>
+    <% appointment.comments.forEach(comment => { %>
+    <li><%= comment.text%></li>
+    <%}) %>
+    <% } %>
+</ul>
+
+
 <%- include('../partials/footer') %>
